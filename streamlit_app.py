@@ -17,8 +17,9 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 
 # Capture list of selected fruits in a variable
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
-fruits_to_show = my_fruit_list.loc[fruits_selected]  # loc - Access a group of rows and columns by label(s) or a boolean array.
+fruits_to_show = my_fruit_list.loc[fruits_selected]  
+# loc - Access a group of rows and columns by label(s) or a boolean array.
 
 
 # Display the table on the page.
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruits_to_show)
