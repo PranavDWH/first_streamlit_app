@@ -10,9 +10,9 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 import pandas
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-streamlit.dataframe(my_fruit_list)
+df = streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(my_fruit_list.Fruit)
-streamlit.dataframe(my_fruit_list[0,1,2])
+df['Fruit','Serving_Size']
 
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
