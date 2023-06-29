@@ -67,8 +67,6 @@ streamlit.header("What fruit would you like to add?")
 add_my_fruit = streamlit.text_input('jackfruit')
 streamlit.text(add_my_fruit)
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST UNION SELECT add_my_fruit")
 my_data_rows2 = my_cur.fetchall() # fetchone function fetches only one value. Instead we will need to use fetchall()
 streamlit.header("New The Fruit Load list contains")
