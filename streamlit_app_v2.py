@@ -61,3 +61,10 @@ streamlit.header("The Fruit Load list contains")
 # streamlit.text(my_data_row) # It returns only one row - banana as text though there are 10 rows in table
 # streamlit.dataframe(my_data_row) # dataframe shows result in table format instead of text, however, it will still show only one row
 streamlit.dataframe(my_data_rows) # passing my_data_rows as variable to show multiple rows
+
+# Take suggestion of what fruit customers want to add
+streamlit.header("What fruit would you like to add?")
+add_my_fruit = streamlit.text_input('jackfruit')
+streamlit.text(add_my_fruit)
+my_data_rows = my_data_rows + add_my_fruit
+streamlit.dataframe(my_data_rows)
