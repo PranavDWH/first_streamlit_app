@@ -66,5 +66,5 @@ streamlit.dataframe(my_data_rows) # passing my_data_rows as variable to show mul
 streamlit.header("What fruit would you like to add?")
 add_my_fruit = streamlit.text_input('jackfruit')
 # streamlit.text(add_my_fruit)
-my_data_rows = my_data_rows + add_my_fruit
-streamlit.dataframe(my_data_rows)
+my_data_rows2 = my_data_rows + add_my_fruit
+streamlit.dataframe(my_data_rows2)
