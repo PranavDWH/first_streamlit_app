@@ -56,5 +56,6 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchone()
-streamlit.text("The Fruit Load list contains")
-streamlit.text(my_data_row)
+streamlit.header("The Fruit Load list contains")
+# streamlit.text(my_data_row) # It returns only one row - banana, though there are 10 rows in table
+streamlit.dataframe(my_data_row)
