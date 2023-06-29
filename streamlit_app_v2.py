@@ -55,7 +55,9 @@ import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
-my_data_row = my_cur.fetchone()
+# my_data_row = my_cur.fetchone() # fetchone function fetches only one value. Instead we will need to use fetchall()
+my_data_rows = my_cur.fetchall() # fetchone function fetches only one value. Instead we will need to use fetchall()
 streamlit.header("The Fruit Load list contains")
-# streamlit.text(my_data_row) # It returns only one row - banana, though there are 10 rows in table
-streamlit.dataframe(my_data_row)
+# streamlit.text(my_data_row) # It returns only one row - banana as text though there are 10 rows in table
+# streamlit.dataframe(my_data_row) # dataframe shows result in table format instead of text, however, it will still show only one row
+# streamlit.dataframe(my_data_rows) # passing my_data_rows as variable to show multiple rows
