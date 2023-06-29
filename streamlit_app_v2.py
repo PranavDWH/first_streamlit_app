@@ -65,9 +65,9 @@ streamlit.dataframe(my_data_rows) # passing my_data_rows as variable to show mul
 # Take suggestion of what fruit customers want to add
 streamlit.header("What fruit would you like to add?")
 add_my_fruit = streamlit.text_input('jackfruit')
-streamlit.text(add_my_fruit)
+streamlit.write('thanks for adding ', add_my_fruit)
 
-my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST UNION SELECT add_my_fruit")
+my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES ('from streamlit')")
 my_data_rows2 = my_cur.fetchall() # fetchone function fetches only one value. Instead we will need to use fetchall()
 streamlit.header("New The Fruit Load list contains")
 streamlit.dataframe(my_data_rows2) # passing my_data_rows as variable to show multiple rows
