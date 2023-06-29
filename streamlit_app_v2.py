@@ -74,7 +74,7 @@ streamlit.dataframe(my_data_rows) # passing my_data_rows as variable to show mul
 streamlit.header("What fruit would you like to add?")
 add_my_fruit = streamlit.text_input('jackfruit')
 streamlit.write('thanks for adding ', add_my_fruit)
-query_stmt = 
+ 
 my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES ('''add_my_fruit''')")
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_rows2 = my_cur.fetchall() # fetchone function fetches only one value. Instead we will need to use fetchall()
