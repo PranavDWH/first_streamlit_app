@@ -28,11 +28,7 @@ streamlit.dataframe(fruits_to_show)
 # Create function
 def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-  # streamlit.text(fruityvice_response)  -- It will only show response(200). We will need to convert it to JSON
-  # streamlit.text(fruityvice_response.json())  # writes data in json format on screen
-  # below code will pick json version and normalize it
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-  # return normalized data
   return fruityvice_normalized
 
 # New Section to display fruit API response
